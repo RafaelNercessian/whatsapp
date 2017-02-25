@@ -27,7 +27,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="#FFF"/>
+            android:textColor="#FFF"
+            android:id="@+id/login_nome"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,12 +79,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logar"
+        android:text="CADASTRAR"
         android:textColor="#FFF"
         android:background="@color/colorPrimaryDark"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginLeft="16dp"
+        android:id="@+id/login_botao"/>
 
 
 </LinearLayout>
