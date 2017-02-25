@@ -36,14 +36,16 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="+55"
+                android:hint="+xx"
                 android:textColorHint="#FFF"
                 android:textSize="20sp"
                 android:layout_gravity="left"
                 android:layout_marginLeft="16dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="#FFF"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:id="@+id/login_ddi"/>
+
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,7 +56,9 @@
                 android:layout_marginLeft="16dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="#FFF"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:id="@+id/login_ddd"/>
+
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +70,9 @@
                 android:layout_marginRight="16dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="#FFF"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:id="@+id/login_telefone"/>
+
         </LinearLayout>
 
     <Button
