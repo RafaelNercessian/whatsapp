@@ -52,7 +52,8 @@
         android:layout_marginRight="16dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="#FFF"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:id="@+id/validador_codigo"/>
 
     <Button
         android:layout_width="match_parent"
@@ -62,7 +63,8 @@
         android:background="@color/colorPrimaryDark"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginLeft="16dp"
+        android:id="@+id/validador_botao"/>
 
 
 </LinearLayout>

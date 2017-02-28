@@ -3,6 +3,7 @@ package com.cursoandroid.whatsapp.activity;
 import android.Manifest;
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cursoandroid.whatsapp.R;
 import com.cursoandroid.whatsapp.helper.Permissao;
@@ -56,7 +58,7 @@ public class LoginActivity extends Activity {
                 String telefoneSemMais = telefoneCompleto.replace("+", "");
                 String telefoneSemFormatcao = telefoneSemMais.replace("-", "");
 
-                Permissao.validaPermissoes(LoginActivity.this,permissoes);
+                Permissao.validaPermissoes(1,LoginActivity.this,permissoes);
 
 
                 //Gerando token
@@ -74,6 +76,13 @@ public class LoginActivity extends Activity {
                 //Envio do SMS
                 telefoneSemFormatcao="5554";
                 boolean enviadoSMS = enviaSMS("+" + telefoneSemFormatcao, mensagemEnvio);
+
+                if(enviadoSMS){
+                    Intent intent = new Intent(LoginActivity.this, ValidadorActivity.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(LoginActivity.this,"Erro no envio do SMS",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

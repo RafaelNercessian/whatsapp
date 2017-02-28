@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Permissao {
 
-    public static boolean validaPermissoes(Activity activity, String[] permissoes) {
+    public static boolean validaPermissoes(int requestCode, Activity activity, String[] permissoes) {
 
         if (Build.VERSION.SDK_INT >= 23) {
 
@@ -37,7 +37,7 @@ public class Permissao {
 
             String[] novasPermissoes = new String[listaPermissoes.size()];
             listaPermissoes.toArray(novasPermissoes);
-            ActivityCompat.requestPermissions(activity, novasPermissoes, 1);
+            ActivityCompat.requestPermissions(activity, novasPermissoes, requestCode);
 
         }
 
