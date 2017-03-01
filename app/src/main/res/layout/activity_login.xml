@@ -20,7 +20,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome"
+            android:hint="E-mail"
             android:textColorHint="#FFF"
             android:textSize="20sp"
             android:layout_gravity="left"
@@ -28,58 +28,25 @@
             android:layout_marginRight="16dp"
             android:backgroundTint="@color/colorPrimaryDark"
             android:textColor="#FFF"
-            android:id="@+id/login_nome"/>
+            android:id="@+id/login_email"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="+xx"
-                android:textColorHint="#FFF"
-                android:textSize="20sp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="16dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="#FFF"
-                android:inputType="phone"
-                android:id="@+id/login_ddi"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="xx"
-                android:textColorHint="#FFF"
-                android:textSize="20sp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="16dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="#FFF"
-                android:inputType="phone"
-                android:id="@+id/login_ddd"/>
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="xxxxx-xxxx"
-                android:textColorHint="#FFF"
-                android:textSize="20sp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="#FFF"
-                android:inputType="phone"
-                android:id="@+id/login_telefone"/>
-
-        </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:textColorHint="#FFF"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#FFF"
+        android:id="@+id/login_senha"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CADASTRAR"
+        android:text="logar"
         android:textColor="#FFF"
         android:background="@color/colorPrimaryDark"
         android:layout_marginTop="16dp"
@@ -87,5 +54,17 @@
         android:layout_marginLeft="16dp"
         android:id="@+id/login_botao"/>
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Não tem conta? Cadastre-se"
+        android:textColorHint="#FFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#FFF"
+        android:id="@+id/login_cadastro"/>
 </LinearLayout>
