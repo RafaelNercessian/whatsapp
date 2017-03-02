@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastroUsuarioActivity extends Activity {
 
@@ -27,6 +29,7 @@ public class CadastroUsuarioActivity extends Activity {
     private EditText senha;
     private Button botao;
     private Usuario usuario;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,8 @@ public class CadastroUsuarioActivity extends Activity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(CadastroUsuarioActivity.this, "Cadastro " + usuario.getNome() + " cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                            usuario.setId(task.getResult().getUser().getUid());
+                            usuario.salvar();
                         } else {
                             Toast.makeText(CadastroUsuarioActivity.this, "Falha ao realizar o cadastro!", Toast.LENGTH_SHORT).show();
 
