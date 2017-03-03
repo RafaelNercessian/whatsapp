@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -65,9 +68,24 @@ public class CadastroUsuarioActivity extends Activity {
                             Toast.makeText(CadastroUsuarioActivity.this, "Cadastro " + usuario.getNome() + " cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
                             usuario.setId(task.getResult().getUser().getUid());
                             usuario.salvar();
+                            mAuth.signOut();
                         } else {
-                            Toast.makeText(CadastroUsuarioActivity.this, "Falha ao realizar o cadastro!", Toast.LENGTH_SHORT).show();
+                            String erro="";
+                            try {
+                                throw task.getException();
+                            } catch(FirebaseAuthWeakPasswordException e) {
+                                erro="Digite uma senha mais forte, com letras e números";
 
+                            } catch(FirebaseAuthInvalidCredentialsException e) {
+                                erro="O e-email digitado é inválido";
+
+                            } catch(FirebaseAuthUserCollisionException e) {
+                                erro="Esse e-mail já foi cadastrado";
+
+                            } catch(Exception e) {
+                                e.printStackTrace();
+                            }
+                            Toast.makeText(CadastroUsuarioActivity.this,erro,Toast.LENGTH_SHORT).show();
                         }
                         new CountDownTimer(4000, 1000) {
 
