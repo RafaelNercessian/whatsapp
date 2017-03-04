@@ -23,5 +23,4 @@
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_person_add"/>
 
-
 </menu>
