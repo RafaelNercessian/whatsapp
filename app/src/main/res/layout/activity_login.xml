@@ -41,7 +41,8 @@
         android:layout_marginRight="16dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="#FFF"
-        android:id="@+id/login_senha"/>
+        android:id="@+id/login_senha"
+        android:inputType="textPassword"/>
 
     <Button
         android:layout_width="match_parent"
