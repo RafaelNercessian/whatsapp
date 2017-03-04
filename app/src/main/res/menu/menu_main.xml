@@ -4,7 +4,8 @@
     <item
         android:id="@+id/menu_configuracoes"
         android:title="Configurações"
-        app:showAsAction="never" />
+        app:showAsAction="never"
+        />
 
     <item
         android:id="@+id/menu_sair"
